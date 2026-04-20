@@ -1,5 +1,8 @@
 # Old Man Drawio
 
+[![Build and Publish Docker Image](https://github.com/pimonteiro/old-man-drawio/actions/workflows/docker-build.yml/badge.svg)](https://github.com/pimonteiro/old-man-drawio/actions/workflows/docker-build.yml)
+
+
 A purposefully simplified, touch-optimized drawing application tailored specifically for elderly users on tablets.
 
 ## Use Case
