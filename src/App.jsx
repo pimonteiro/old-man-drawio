@@ -29,6 +29,14 @@ export default function App() {
     
     // Set portuguese as default language
     editor.user.updateUserPreferences({ locale: 'pt-pt' });
+
+    // Force focus mode to false and keep it that way
+    editor.updateInstanceState({ isFocusMode: false });
+    editor.store.listen(() => {
+      if (editor.getInstanceState().isFocusMode) {
+        editor.updateInstanceState({ isFocusMode: false });
+      }
+    }, { scope: 'local', source: 'user' });
   }, []);
 
   // Export drawing as JSON
