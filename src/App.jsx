@@ -150,6 +150,16 @@ export default function App() {
           Inserir Imagem
           <input type="file" accept="image/*" style={{ display: 'none' }} onChange={importImage} />
         </label>
+        <div style={{ 
+          fontSize: '0.7rem', 
+          color: '#9ca3af', 
+          alignSelf: 'center', 
+          marginLeft: '4px',
+          fontFamily: 'monospace',
+          fontWeight: '600'
+        }}>
+          v1.0.1
+        </div>
       </div>
     </div>
   );
