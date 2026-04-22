@@ -63,6 +63,7 @@ body,
 .tlui-layout__bottom {
   opacity: 1 !important;
   visibility: visible !important;
+  display: flex !important;
 }
 
 .tlui-layout__bottom > * {

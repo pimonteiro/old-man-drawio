@@ -26,7 +26,7 @@ export default function App() {
     editor.setStyleForNextShapes(ArrowShapeKindStyle, 'elbow');
     editor.setStyleForNextShapes(ArrowShapeArrowheadStartStyle, 'none');
     editor.setStyleForNextShapes(ArrowShapeArrowheadEndStyle, 'none');
-    
+
     // Set portuguese as default language
     editor.user.updateUserPreferences({ locale: 'pt-pt' });
 
@@ -36,7 +36,7 @@ export default function App() {
       if (editor.getInstanceState().isFocusMode) {
         editor.updateInstanceState({ isFocusMode: false });
       }
-    }, { scope: 'local', source: 'user' });
+    });
   }, []);
 
   // Export drawing as JSON
@@ -74,7 +74,7 @@ export default function App() {
   const importImage = (e) => {
     const file = e.target.files?.[0];
     if (!file || !editorRef.current) return;
-    
+
     // Use tldraw's built in content handler for pasting/dropping files
     editorRef.current.putExternalContent({
       type: 'files',
@@ -82,7 +82,7 @@ export default function App() {
       point: editorRef.current.getViewportPageBounds().center,
       ignoreParent: false,
     });
-    
+
     e.target.value = '';
   };
 
@@ -136,8 +136,8 @@ export default function App() {
       </div>
       {/* Custom Toolbar floating nicely at the top center */}
       <div style={toolbarStyle}>
-        <button 
-          style={buttonStyle} 
+        <button
+          style={buttonStyle}
           onClick={exportJson}
         >
           Exportar JSON
@@ -150,10 +150,10 @@ export default function App() {
           Inserir Imagem
           <input type="file" accept="image/*" style={{ display: 'none' }} onChange={importImage} />
         </label>
-        <div style={{ 
-          fontSize: '0.7rem', 
-          color: '#9ca3af', 
-          alignSelf: 'center', 
+        <div style={{
+          fontSize: '0.7rem',
+          color: '#9ca3af',
+          alignSelf: 'center',
           marginLeft: '4px',
           fontFamily: 'monospace',
           fontWeight: '600'
