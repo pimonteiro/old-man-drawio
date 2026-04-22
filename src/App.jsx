@@ -120,6 +120,7 @@ export default function App() {
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'auto' }}>
         <Tldraw
           persistenceKey="grandparent-app-v4"
+          forceMobile={true}
           onMount={handleMount}
           assetUrls={assetUrls}
           components={minimalComponents}
