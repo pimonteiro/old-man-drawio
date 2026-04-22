@@ -29,6 +29,14 @@ export default function App() {
     
     // Set portuguese as default language
     editor.user.updateUserPreferences({ locale: 'pt-pt' });
+
+    // Force focus mode to false and keep it that way
+    editor.updateInstanceState({ isFocusMode: false });
+    editor.store.listen(() => {
+      if (editor.getInstanceState().isFocusMode) {
+        editor.updateInstanceState({ isFocusMode: false });
+      }
+    }, { scope: 'local', source: 'user' });
   }, []);
 
   // Export drawing as JSON
@@ -119,7 +127,7 @@ export default function App() {
     <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none' }}>
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'auto' }}>
         <Tldraw
-          persistenceKey="grandparent-app-v4"
+          persistenceKey="grandparent-app-v5"
           forceMobile={true}
           onMount={handleMount}
           assetUrls={assetUrls}
@@ -142,6 +150,16 @@ export default function App() {
           Inserir Imagem
           <input type="file" accept="image/*" style={{ display: 'none' }} onChange={importImage} />
         </label>
+        <div style={{ 
+          fontSize: '0.7rem', 
+          color: '#9ca3af', 
+          alignSelf: 'center', 
+          marginLeft: '4px',
+          fontFamily: 'monospace',
+          fontWeight: '600'
+        }}>
+          v1.0.1
+        </div>
       </div>
     </div>
   );

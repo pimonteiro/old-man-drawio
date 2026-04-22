@@ -45,3 +45,26 @@ body,
   /* Using multiple drop shadows increases the harshness/solidity of the halo */
   filter: drop-shadow(0px 0px 4px #ffffff) drop-shadow(0px 0px 4px #ffffff) drop-shadow(0px 0px 4px #ffffff);
 }
+
+/* 
+  Force Tldraw UI visibility on tablets/mobile.
+  Sometimes tldraw hides the toolbar when editing or via focus mode gestures.
+*/
+.tlui-toolbar,
+.tlui-navigation-zone,
+.tlui-style-panel {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+  transform: none !important;
+}
+
+/* Ensure the layout container doesn't hide children */
+.tlui-layout__bottom {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.tlui-layout__bottom > * {
+  pointer-events: all !important;
+}
