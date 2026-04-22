@@ -37,19 +37,4 @@ html, body, #root {
   filter: drop-shadow(0px 0px 4px #ffffff) drop-shadow(0px 0px 4px #ffffff) drop-shadow(0px 0px 4px #ffffff);
 }
 
-/* Prevent tldraw UI from auto-hiding on tablet/mobile */
-.tlui-layout,
-.tlui-toolbar,
-.tlui-navigation-zone,
-.tlui-style-panel {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: none !important;
-}
-
-[data-is-focus-mode="true"] .tlui-layout {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
+/* Removed faulty tlui-layout pointer-events overrides */
