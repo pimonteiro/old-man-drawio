@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "lucide-react": "^0.395.0",
-    "puppeteer": "^24.42.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tldraw": "^4.5.7"
