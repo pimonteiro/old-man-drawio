@@ -158,7 +158,7 @@ export default function App() {
           fontFamily: 'monospace',
           fontWeight: '600'
         }}>
-          v1.0.5
+          v1.0.6
         </div>
       </div>
     </div>

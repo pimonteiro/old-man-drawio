@@ -1,9 +1,10 @@
 {
   "name": "draw-clone",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "scripts": {
+    "postinstall": "sed -i 's/\"unlicensed-production\"/\"unlicensed\"/g' node_modules/@tldraw/editor/dist-esm/lib/license/LicenseManager.mjs node_modules/@tldraw/editor/dist-cjs/lib/license/LicenseManager.js || true",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
